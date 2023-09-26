@@ -22,5 +22,16 @@ namespace BejegyzesProjekt
                 this.Letrejott = DateTime.Now;
                 this.Szerkesztve = DateTime.Now;
             }
+
+            public void Like()
+            {
+                this.Likeok++;
+            }
+
+            public override string ToString()
+            {
+            string szerkesztveSzoveg = this.Szerkesztve == this.Letrejott ? "" : $"Szerkeszve: {this.Szerkesztve}";
+            return $"{this.Szerzo} - {this.Likeok} - {this.Letrejott} {szerkesztveSzoveg}: {this.Tartalom}";
+            }
         }
     }

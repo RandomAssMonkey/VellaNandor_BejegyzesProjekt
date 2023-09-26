@@ -11,8 +11,7 @@ namespace BejegyzesProjekt
     {
         static void Main(string[] args)
         {
-
-
+            
         }
     }
 }
