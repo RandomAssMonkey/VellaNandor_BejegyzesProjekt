@@ -9,8 +9,7 @@ namespace BejegyzesProjekt
 {
     class Program
     {
-        public List<Bejegyzes> bejegyzes;
-
+        static List<Bejegyzes> bejegyzes = new List<Bejegyzes>();
         static void SzamBekeres()
         {
             Console.Write("Hány darab bejegyzést szeretnél írni? ");
@@ -24,11 +23,23 @@ namespace BejegyzesProjekt
 
         static void BejegyzesKeszites()
         {
-            Console.WriteLine("X");
+            Console.Write("Ki a szerző? ");
+            string szerzo = Console.ReadLine();
+            Console.Write("Mi a tartalom? ");
+            string tartalom = Console.ReadLine();
+            Bejegyzes b3 = new Bejegyzes(szerzo, tartalom);
+            bejegyzes.Add(b3);
+            Console.WriteLine(b3);
         }
 
         static void Main(string[] args)
         {
+            Bejegyzes b1 = new Bejegyzes("Móth Tarcell", "Ekkora F*szt szopott anyád!");
+            bejegyzes.Add(b1);
+            Console.WriteLine(b1);
+            Bejegyzes b2 = new Bejegyzes("Babó Széla", "BOMBA BOMBA");
+            bejegyzes.Add(b2);
+            Console.WriteLine(b2);
             SzamBekeres();
 
             Console.ReadKey();
