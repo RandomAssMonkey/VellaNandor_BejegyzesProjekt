@@ -83,6 +83,7 @@ namespace BejegyzesProjekt
             SzamBekeres();
             Beolvasas();
             LikeLike();
+            TartalomModositas();
 
 
 
