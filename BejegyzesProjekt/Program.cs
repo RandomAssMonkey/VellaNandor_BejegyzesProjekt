@@ -126,6 +126,21 @@ namespace BejegyzesProjekt
             Console.WriteLine($"Ennyi bejegyzésnek van 15-nél kevesebb like-ja: {szam}");
         }
 
+        static void RendezesEsKiiratas()
+        {
+            List<Bejegyzes> rendezettLista = bejegyzes.OrderByDescending(o => o.Likeok).ToList();
+            foreach (var item in rendezettLista)
+            {
+                Console.WriteLine(item);
+            }
+            StreamWriter sw = new StreamWriter("bejegyzesek_rendezett.txt");
+            for (int i = 0; i < rendezettLista.Count; i++)
+            {
+                sw.WriteLine($"{rendezettLista[i].Szerzo},{rendezettLista[i].Tartalom},{rendezettLista[i].Letrejott},{rendezettLista[i].Szerkesztve},{rendezettLista[i].Likeok}");
+            }
+            sw.Close();
+        }
+
         static void Main(string[] args)
         {
             Bejegyzes b1 = new Bejegyzes("Móth Tarcell", "Bocsánat :(");
@@ -142,6 +157,7 @@ namespace BejegyzesProjekt
             Legnepszerubb();
             TobbMint();
             KevesebbMint();
+            RendezesEsKiiratas();
 
 
             Console.ReadKey();

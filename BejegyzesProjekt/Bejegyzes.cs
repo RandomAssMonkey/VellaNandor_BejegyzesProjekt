@@ -30,8 +30,8 @@ namespace BejegyzesProjekt
 
             public override string ToString()
             {
-            string szerkesztveSzoveg = this.Szerkesztve == this.Letrejott ? "" : $"Szerkesztve: {this.Szerkesztve}";
-            return $"{this.Szerzo} - {this.Likeok} - {this.Letrejott} {szerkesztveSzoveg}: {this.Tartalom}";
+            string szerkesztettSzoveg = this.Szerkesztve == this.Letrejott ? "" : $"Szerkesztve: {this.Szerkesztve}";
+            return $"{this.Szerzo} - {this.Likeok} - {this.Letrejott} {szerkesztettSzoveg}: {this.Tartalom}";
             }
         }
     }
