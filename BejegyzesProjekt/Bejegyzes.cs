@@ -3,16 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
 namespace BejegyzesProjekt
 {
-    class Program
+    class Bejegyzes
     {
-        static void Main(string[] args)
-        {
-
-
-        }
+        private string szerzo;
     }
 }
