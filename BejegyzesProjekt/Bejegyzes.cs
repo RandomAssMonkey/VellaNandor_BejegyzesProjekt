@@ -8,6 +8,19 @@ namespace BejegyzesProjekt
 {
     class Bejegyzes
     {
-        private string szerzo;
+            public string Szerzo { get; }
+            public string Tartalom { get; set; }
+            public int Likeok { get; private set; }
+            public DateTime Letrejott { get; }
+            public DateTime Szerkesztve { get; private set; }
+
+            public Bejegyzes(string szerzo, string tartalom)
+            {
+                this.Szerzo = szerzo;
+                this.Tartalom = tartalom;
+                this.Likeok = 0;
+                this.Letrejott = DateTime.Now;
+                this.Szerkesztve = DateTime.Now;
+            }
+        }
     }
-}
