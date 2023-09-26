@@ -79,9 +79,23 @@ namespace BejegyzesProjekt
                 Console.WriteLine($"{item}");
             }
         }
+
+        static void Legnepszerubb()
+        {
+            int like = 0;
+            foreach (var item in bejegyzes)
+            {
+                if (item.Likeok > like )
+                {
+                    like = item.Likeok;
+                }
+            }
+            Console.WriteLine(like);
+        }
+
         static void Main(string[] args)
         {
-            Bejegyzes b1 = new Bejegyzes("Móth Tarcell", "Ekkora F*szt szopott anyád!");
+            Bejegyzes b1 = new Bejegyzes("Móth Tarcell", "Bocsánat :(");
             bejegyzes.Add(b1);
             Console.WriteLine(b1);
             Bejegyzes b2 = new Bejegyzes("Babó Széla", "BOMBA BOMBA");
@@ -92,7 +106,7 @@ namespace BejegyzesProjekt
             LikeLike();
             TartalomModositas();
             ListaTartalma();
-
+            Legnepszerubb();
 
 
             Console.ReadKey();
