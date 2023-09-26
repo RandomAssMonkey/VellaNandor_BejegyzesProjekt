@@ -45,6 +45,17 @@ namespace BejegyzesProjekt
                 Console.WriteLine(b);
             }
         }
+
+        static void LikeLike()
+        {
+            Random a = new Random();
+            for (int i = 0; i < bejegyzes.Count * 20; i++)
+            {
+                int b = a.Next(0, bejegyzes.Count);
+                bejegyzes[b].Like();
+            }
+        }
+
         static void Main(string[] args)
         {
             Bejegyzes b1 = new Bejegyzes("Móth Tarcell", "Ekkora F*szt szopott anyád!");
@@ -55,6 +66,8 @@ namespace BejegyzesProjekt
             Console.WriteLine(b2);
             SzamBekeres();
             Beolvasas();
+            LikeLike();
+
 
             Console.ReadKey();
         }
