@@ -95,16 +95,21 @@ namespace BejegyzesProjekt
 
         static void TobbMint()
         {
+            int szam = 0;
             foreach (var item in bejegyzes)
             {
                 if (item.Likeok > 35)
                 {
-                    Console.WriteLine("Van olyan bejegyzés ami több mint 35 like-ot kapott.");
+                    szam++;
                 }
-                else
-                {
-                    Console.WriteLine("Nincs olyan bejegyzés ami több mint 35 like-ot kapott.");
-                }
+            }
+            if (szam == 0)
+            {
+                Console.WriteLine("Nincs olyan bejegyzés ami több mint 35 like-ot kapott.");
+            }
+            else
+            {
+                Console.WriteLine("Van olyan bejegyzés ami több mint 35 like-ot kapott.");
             }
         }
 
