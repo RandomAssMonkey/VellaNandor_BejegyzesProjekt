@@ -32,6 +32,19 @@ namespace BejegyzesProjekt
             Console.WriteLine(b3);
         }
 
+        static void Beolvasas()
+        {
+            StreamReader r = new StreamReader("bejegyzesek.csv");
+            while (!r.EndOfStream)
+            {
+                string[] adatok = r.ReadLine().Split(';');
+                string szerzo = adatok[0];
+                string tartalom = adatok[1];
+                Bejegyzes b = new Bejegyzes(szerzo, tartalom);
+                bejegyzes.Add(b);
+                Console.WriteLine(b);
+            }
+        }
         static void Main(string[] args)
         {
             Bejegyzes b1 = new Bejegyzes("Móth Tarcell", "Ekkora F*szt szopott anyád!");
@@ -41,6 +54,7 @@ namespace BejegyzesProjekt
             bejegyzes.Add(b2);
             Console.WriteLine(b2);
             SzamBekeres();
+            Beolvasas();
 
             Console.ReadKey();
         }
