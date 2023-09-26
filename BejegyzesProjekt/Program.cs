@@ -113,6 +113,19 @@ namespace BejegyzesProjekt
             }
         }
 
+        static void KevesebbMint()
+        {
+            int szam = 0;
+            foreach (var item in bejegyzes)
+            {
+                if (15 > item.Likeok)
+                {
+                    szam++;
+                }
+            }
+            Console.WriteLine($"Ennyi bejegyzésnek van 15-nél kevesebb like-ja: {szam}");
+        }
+
         static void Main(string[] args)
         {
             Bejegyzes b1 = new Bejegyzes("Móth Tarcell", "Bocsánat :(");
@@ -128,6 +141,7 @@ namespace BejegyzesProjekt
             ListaTartalma();
             Legnepszerubb();
             TobbMint();
+            KevesebbMint();
 
 
             Console.ReadKey();
