@@ -69,9 +69,16 @@ namespace BejegyzesProjekt
             Console.Write("Add meg a módosíani kivánt tartalmat: ");
             string modosultTartalom = Console.ReadLine();
             bejegyzes[2].Tartalom = modosultTartalom;
-            Console.WriteLine();
+            Console.WriteLine(bejegyzes[2]);
         }
 
+        static void ListaTartalma()
+        {
+            foreach (var item in bejegyzes)
+            {
+                Console.WriteLine($"{item}");
+            }
+        }
         static void Main(string[] args)
         {
             Bejegyzes b1 = new Bejegyzes("Móth Tarcell", "Ekkora F*szt szopott anyád!");
@@ -84,6 +91,7 @@ namespace BejegyzesProjekt
             Beolvasas();
             LikeLike();
             TartalomModositas();
+            ListaTartalma();
 
 
 
