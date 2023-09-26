@@ -14,9 +14,17 @@ namespace BejegyzesProjekt
         {
             Console.Write("Hány darab bejegyzést szeretnél írni? ");
             int darabSzam = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < darabSzam; i++)
+            if (darabSzam >= 0)
             {
-                BejegyzesKeszites();
+                for (int i = 0; i < darabSzam; i++)
+                {
+                    BejegyzesKeszites();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Hibás adat!");
+                SzamBekeres();
             }
 
         }
@@ -56,6 +64,14 @@ namespace BejegyzesProjekt
             }
         }
 
+        static void TartalomModositas()
+        {
+            Console.Write("Add meg a módosíani kivánt tartalmat: ");
+            string modosultTartalom = Console.ReadLine();
+            bejegyzes[2].Tartalom = modosultTartalom;
+            Console.WriteLine();
+        }
+
         static void Main(string[] args)
         {
             Bejegyzes b1 = new Bejegyzes("Móth Tarcell", "Ekkora F*szt szopott anyád!");
@@ -67,6 +83,7 @@ namespace BejegyzesProjekt
             SzamBekeres();
             Beolvasas();
             LikeLike();
+
 
 
             Console.ReadKey();
