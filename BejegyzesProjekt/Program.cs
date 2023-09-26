@@ -93,6 +93,21 @@ namespace BejegyzesProjekt
             Console.WriteLine(like);
         }
 
+        static void TobbMint()
+        {
+            foreach (var item in bejegyzes)
+            {
+                if (item.Likeok > 35)
+                {
+                    Console.WriteLine("Van olyan bejegyzés ami több mint 35 like-ot kapott.");
+                }
+                else
+                {
+                    Console.WriteLine("Nincs olyan bejegyzés ami több mint 35 like-ot kapott.");
+                }
+            }
+        }
+
         static void Main(string[] args)
         {
             Bejegyzes b1 = new Bejegyzes("Móth Tarcell", "Bocsánat :(");
@@ -107,6 +122,7 @@ namespace BejegyzesProjekt
             TartalomModositas();
             ListaTartalma();
             Legnepszerubb();
+            TobbMint();
 
 
             Console.ReadKey();
